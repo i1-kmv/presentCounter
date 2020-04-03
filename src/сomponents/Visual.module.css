@@ -1,0 +1,19 @@
+.visual {
+    width: 400px;
+    height: 200px;
+    background-color: cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px;
+    margin: 10px ;
+    font-size: 140px;
+}
+
+
+
+
+
+.max {
+    color: red;
+}

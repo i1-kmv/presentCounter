@@ -1,26 +1,52 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Visual from "./сomponents/Visual";
+import Control from "./сomponents/Control";
+import s from "./сomponents/Visual.module.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+
+    state = {
+        value: 0
+    };
+
+
+
+    counterReset = () => {
+        let newValue = 0;
+        this.setState({
+            value: newValue
+        });
+    };
+
+
+
+    counterInc = () => {
+        if (this.state.value < 5) {
+            let newValue = ++this.state.value;
+             this.setState({
+                value: newValue
+            });
+        } else {
+           return null
+            };
+        }
+
+
+
+
+    render = () => {
+        return(
+            <div className = "App">
+                <div className="wrapper">
+                <Visual   value = {this.state.value}  />
+                <Control  counterInc={this.counterInc} counterReset={this.counterReset} value = {this.state.value}  />
+                </div>
+             </div>
+                 )
+    }
+};
+
 
 export default App;
